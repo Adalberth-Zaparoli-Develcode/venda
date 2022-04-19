@@ -1,5 +1,7 @@
 package com.loja.autentica.domain.entity;
 
+import com.loja.autentica.domain.type.PaymentType;
+import com.loja.autentica.domain.type.StatusType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,8 +9,6 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Getter
@@ -19,11 +19,15 @@ import java.util.List;
 public class OrderModel {
 
     @Id
+    private String hash;
+
     private Long id;
 
-    @Valid
-    @NotNull(message = "O campo product não pode ser nulo")
-    private List<ProcuctModel> product;
+    private List<ProductModel> products;
 
-    private UserModel user;
+    private String user;
+
+    private PaymentType payment;
+
+    private StatusType status;
 }

@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-public class ProcuctDto {
+public class ProductDto {
 
     @NotNull(message = "O campo product não pode ser nulo")
     private String nameProduct;
@@ -17,5 +17,5 @@ public class ProcuctDto {
     private BigDecimal price;
 
     @NotNull(message = "O campo product não pode ser nulo")
-    private BigDecimal quantity;
+    private int quantity;
 }

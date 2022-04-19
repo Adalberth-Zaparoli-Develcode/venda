@@ -18,9 +18,6 @@ public class UserController {
     @Autowired
     private UserRepository repository;
 
-    @Autowired
-    private Queue queue;
-
     @PostMapping("user")
     @CircuitBreaker(name = "circuitBreakerDefault")
     private ResponseEntity save(@NotNull @RequestBody UserModel user){

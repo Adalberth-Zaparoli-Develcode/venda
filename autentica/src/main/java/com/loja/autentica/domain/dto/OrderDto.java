@@ -1,7 +1,6 @@
 package com.loja.autentica.domain.dto;
 
-import com.loja.autentica.domain.entity.ProcuctModel;
-import com.loja.autentica.domain.entity.UserModel;
+import com.loja.autentica.domain.type.PaymentType;
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
@@ -16,8 +15,10 @@ public class OrderDto {
     private Long id;
 
     @NotNull(message = "O campo product não pode ser nulo")
-    private List<ProcuctDto> products;
+    private List<ProductDto> products;
 
     @NotNull(message = "O campo user não pode ser nulo")
     private String user;
+
+    private PaymentType payment;
 }
